@@ -1,0 +1,479 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.in_max_date="30/04" this:Main.in_min_date="20/04" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_max_date" Type="InArgument(x:String)" />
+    <x:Property Name="in_min_date" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1130,4991</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Globalization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="1140,4926" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="[String.Format(&quot;C:\Users\{0}\Documents\Trigger&quot;,Environment.UserName)]" Name="file_path" />
+      <Variable x:TypeArguments="s:String[]" Name="files" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: פורטל שעות עבודה" sap:VirtualizedContainerService.HintSize="1078,4815" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="Never" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1044,4598" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="scg:List(x:String)" Name="sheets_Collection" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="982,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:String[]">[files]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(file_path)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <uix:NClick ClickType="Single" DisplayName="Click 'דווח חדש'" sap:VirtualizedContainerService.HintSize="982,167" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://fin-iis.hms.co.il/HalperinTimeReportPortal/" DesignTimeRectangle="1684, 269, 234, 29" ElementType="Text" FriendlyName="'דווח חדש'" FullSelectorArgument="&lt;webctrl tag='A' aaname='דווח חדש' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' aaname='דווח חדש' type='' check:text='דווח חדש' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAO4AAAAhCAYAAADeUJdDAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJZSURBVHhe7doxSxthHMfxvosufQMdBKdmErLYoUO7SKBEOtShCoIvQIRYEKRDRAiEZLBIBulwBBJcKoQgBktrSCGhkFfz63PNJT53eXKlFHJ97Hf4DPnf4/McIV+Dco/G47EA+IVwAQ8RLuAhwgU8RLiAhwgX8BDhAh4iXMBDhAt4iHABDxEuMjRQcFrS4WlLd9a8+9HM3lcU9K21nYaZlVRuDmKvU1n7Tva0r53p4lOg9vXo/ozfmTvzRHWzx8VlV8MfibX9lsqzdQ11U+fR+zCbu513oj0MwkWGeqoU83pcrOnWmgcHZvZkS5Uba22zZGZ5Faq92OtU1r6TPd1Wix/U/m6dtUjambk3Or6MfqmEbmoqzK6XFKTOo/dhNnfbb0Z7GISLDP1FuE4t7Ycf8sR+ocmeVkC/jNSt72rN/MzaQUvD2DWH6B7sgELDTk3bebN/3uw/tK9Ng0yeu2ged1vdcp4XIlxkKOtwQ9E9rJTUnruWsCDc0CSyde237Tnh4kH6F8JdcJ5LSrju+yNcPEiES7jwUHq49S/WWsKNIVxkyBXuQOc7ZpY/iv/NGYWxWf92P5tDuMASOML92tDeqw3tNeKBdssb5kOc/OdPEuECS+AI12F4daLNFbPueeJbeA7hAksw/QCv61lhV4fVhoKrnu76A6Onz80zHe+81moYY+6d6teuPWyECyzHsKegeqTtwgs9DaNLyr3U2/DRQPvxx4UIF8jAKPq2nfqD54j/M4QLeIhwAQ8RLuAhwgU8RLiAhwgX8BDhAh4iXMBDhAt4iHAB74z1E767n/kqC6CSAAAAAElFTkSuQmCC" InformativeScreenshot="f65afd275494bf2f7e23d6e9237ca9b9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='פורטל שעות עבודה' /&gt;" SearchSteps="Selector" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="982,335" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[String.Format(Path.Combine(file_path,files(0)))]">
+              <ui:ExcelApplicationScope.Body>
+                <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,225" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ExcelGetWorkbookSheets DisplayName="Get Workbook Sheets" sap:VirtualizedContainerService.HintSize="354,25" sap2010:WorkflowViewState.IdRef="ExcelGetWorkbookSheets_1" Sheets="[sheets_Collection]" />
+                    <ui:ExcelReadRange AddHeaders="False" DataTable="[dt]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="354,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" PreserveFormat="True" Range="A2" SheetName="[sheets_Collection(0)]" />
+                  </Sequence>
+                </ActivityAction>
+              </ui:ExcelApplicationScope.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ExcelApplicationScope>
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="982,3806" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="948,3684" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If Condition="[dt.Rows.IndexOf(CurrentRow) = 0 OR dt.Rows.IndexOf(CurrentRow) = 1]" DisplayName="skip first row" sap:VirtualizedContainerService.HintSize="886,52" sap2010:WorkflowViewState.IdRef="If_1">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="416,137" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:Continue sap:VirtualizedContainerService.HintSize="354,25" sap2010:WorkflowViewState.IdRef="Continue_1" />
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_9">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <If Condition="[Not string.IsNullOrEmpty(in_min_date)]" sap:VirtualizedContainerService.HintSize="886,52" sap2010:WorkflowViewState.IdRef="If_2">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="546,438" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If Condition="[Date.ParseExact(CurrentRow(0).ToString.Split(&quot; &quot;c)(1) + &quot;/&quot; + Date.Now.Year.ToString,&quot;dd/MM/yyyy&quot;,Globalization.CultureInfo.InvariantCulture) &lt; Date.ParseExact(in_min_date+ &quot;/&quot; + Date.Now.Year.ToString,&quot;dd/MM/yyyy&quot;,Globalization.CultureInfo.InvariantCulture)]" sap:VirtualizedContainerService.HintSize="484,326" sap2010:WorkflowViewState.IdRef="If_3">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If.Then>
+                              <Sequence sap:VirtualizedContainerService.HintSize="416,137" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:Continue sap:VirtualizedContainerService.HintSize="354,25" sap2010:WorkflowViewState.IdRef="Continue_2" />
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_13">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <If Condition="[Not string.IsNullOrEmpty(in_max_date)]" sap:VirtualizedContainerService.HintSize="886,627" sap2010:WorkflowViewState.IdRef="If_5">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="546,438" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If Condition="[Date.ParseExact(CurrentRow(0).ToString.Split(&quot; &quot;c)(1) + &quot;/&quot; + Date.Now.Year.ToString,&quot;dd/MM/yyyy&quot;,Globalization.CultureInfo.InvariantCulture) &gt; Date.ParseExact(in_max_date+ &quot;/&quot; + Date.Now.Year.ToString,&quot;dd/MM/yyyy&quot;,Globalization.CultureInfo.InvariantCulture)]" sap:VirtualizedContainerService.HintSize="484,326" sap2010:WorkflowViewState.IdRef="If_4">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If.Then>
+                              <Sequence sap:VirtualizedContainerService.HintSize="416,137" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:Continue sap:VirtualizedContainerService.HintSize="354,25" sap2010:WorkflowViewState.IdRef="Continue_3" />
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_19">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <ui:SetWebAttribute ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Attribute="data-date" DisplayName="Set Web Attribute 'INPUT  txtNewReportDate'" sap:VirtualizedContainerService.HintSize="886,163" sap2010:WorkflowViewState.IdRef="SetWebAttribute_1" Value="[CurrentRow(0).ToString.Split(&quot; &quot;c)(1) +&quot;/&quot; + Date.Now.Year.ToString]">
+                      <ui:SetWebAttribute.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="76aa7e7a-3f9b-4bb6-8873-af18b7faaae7" InformativeScreenshot="da4b5580909c9d726cb997966b158890" Selector="&lt;webctrl tag='INPUT' type='date' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:SetWebAttribute.Target>
+                    </ui:SetWebAttribute>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'משעה'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="886,227" sap2010:WorkflowViewState.IdRef="NTypeInto_2" Text="[CurrentRow(4).ToString]">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://fin-iis.hms.co.il/HalperinTimeReportPortal/#" DesignTimeRectangle="858, 253, 244, 34" ElementType="InputBox" FriendlyName="'INPUT txtNewReportFromT…'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='tel' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='tel' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPgAAAAmCAYAAADp5VZUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGdSURBVHhe7d1NjoJQEEVh9r9U5X8DdN2CkgcytQc350uqGzHR0Qn4VOzWdd00y7J8zTzPMfrfjPbHTHEfwzD/M9XdV49x31O71XUG3t5xiTpuPz1ZO+M0MQzzo3lqrp1r9NfYM/C6AcBHdZ2Bq3wAPupo3tUpOQAfdcoegccGp+iAlXpt3tVCGgAftQDX1WocAB/VdQau5XgAPuotti43Jo7ggBM1rba7Kf6MI0dwwImaVtsReJRO4ICVPXCdoscGr8EBL2pabWfgwzgeuwE4UNN74FE6gQNeMnC9BidwwM8ncG30w3DsBuBATattAgcM3QLnFB1woqYJHDBF4IAxAgeMEThgjMABYwQOGCNwwBiBA8YIHDB2C5yPqgJO+Cw6YOwTOF8XBfyoab4PDpg6A+eSTYCdDLyuyabSAfhQ0xk4l00G/KjpvGwyP3wA+NkDPxbZ6iiu83aN3iR/90MutZ+z72vn9e63V88wzM8mGrt3pxbbNmtf9VtH71xkqx8f1M575M+h7w/WPiHDML+de9Sac/817hwduOd5+wMh+9BKSSGCuwAAAABJRU5ErkJggg==" InformativeScreenshot="faf7402ffbc4f3f1cb42ca36aff76aae.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='פורטל שעות עבודה' /&gt;" SearchSteps="Selector">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="858, 236, 244, 17" ElementType="Text" FriendlyName="'משעה'" FullSelectorArgument="&lt;webctrl aaname='משעה' parentid='divNewReport' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='משעה' parentid='divNewReport' tag='DIV' type='' check:text='משעה' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPgAAAAVCAYAAABrCyNXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALHSURBVHhe7djPa9NgHMfx/W9mlziIFCuseOhlOyx66GmCO7ihTlmmsJ0EUXDIVg/OHxPGBCvD9LIdNz2YDjq1HWtZmvQP+Pg8+dEmbbZuY/4gfB54QZ4+3/64vFPaoXa7DSJKJwZOlGIMnCjFGDhRijFwohRj4EQpxsCJUuxcgbuuS0QDmHMKFEVSoY2OY/JJCVU7PFMxvd6MzRqb/rW1rEOZM/2zTQPKRBGWuG7vvYKuzKMsO/xVxvNb48iOiNdXNWgZDfmHH7Hfird6qsDDD0FE52RXsXZHReFN1dvX301CfRRELJwmcLdSFIEbML3n1LG/u4qp0UVsy6hbB/h8X0Ph7X6s3b7AwzckoosVC3fnGXJjS364wtkD928S2uKWPyeVZqEY5VjPXuCdASK6MPX1WUwF39hSLFzbhKFOY+PQPzsx8JtFVOV1T+Bfn+agL1v+XDgbPk/wAu8cnpq8IRDRIObcsAiw0tlbyzdEgOVgf4C1yStY2PbPSveGReD9c831GeRffPOfUxG/wdVu4NGbgqcncOmYwP038oi7gCMeI6Kz+WIomFixOvvvKzouGaa/t13sLuUx9lKc/yxhNlPA62pk7m7JnzusoyFmHbuOT0YWVx+baHivZ6God28QnsGBHx90fI6IBjFF4LoIPNxbIlxFBO42S5jPZpEb1aCOyH/A85h5351r7nzAg0JWnImZ6zlPNqNBX+j+C++4W1jI6ChWxPXeKm7LuWuXg2/+7mcIAu8POzoU5TgOEV2EowZqPxrJZ4FGrYZarTuT1KQUa9f7X02SgZ8QdvSNiOj/FGs2QrY91Bt20gtIrVYrIK+J6N/wO0xqVOoNvfMbPGk4MWj5uGCLMyL6O8Lu+noUZ0nthl17gUcPYlGLfdKbRR3ZNhH9IUnNRcWjj8fuBR5uuLi40rPCrr3AZflcXFzpWf63uYPf7yCwKYLyvU4AAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'עד שעה'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="886,227" sap2010:WorkflowViewState.IdRef="NTypeInto_3" Text="[CurrentRow(5).ToString]">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://fin-iis.hms.co.il/HalperinTimeReportPortal/#" DesignTimeRectangle="584, 253, 244, 34" ElementType="InputBox" FriendlyName="'INPUT txtNewReportToTime'" FullSelectorArgument="&lt;webctrl id='txtNewReportToTime' tag='INPUT' type='tel' /&gt;" FuzzySelectorArgument="&lt;webctrl id='txtNewReportToTime' tag='INPUT' type='tel' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPgAAAAmCAYAAADp5VZUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGdSURBVHhe7d1NjoJQEEVh9r9U5X8DdN2CkgcytQc350uqGzHR0Qn4VOzWdd00y7J8zTzPMfrfjPbHTHEfwzD/M9XdV49x31O71XUG3t5xiTpuPz1ZO+M0MQzzo3lqrp1r9NfYM/C6AcBHdZ2Bq3wAPupo3tUpOQAfdcoegccGp+iAlXpt3tVCGgAftQDX1WocAB/VdQau5XgAPuotti43Jo7ggBM1rba7Kf6MI0dwwImaVtsReJRO4ICVPXCdoscGr8EBL2pabWfgwzgeuwE4UNN74FE6gQNeMnC9BidwwM8ncG30w3DsBuBATattAgcM3QLnFB1woqYJHDBF4IAxAgeMEThgjMABYwQOGCNwwBiBA8YIHDB2C5yPqgJO+Cw6YOwTOF8XBfyoab4PDpg6A+eSTYCdDLyuyabSAfhQ0xk4l00G/KjpvGwyP3wA+NkDPxbZ6iiu83aN3iR/90MutZ+z72vn9e63V88wzM8mGrt3pxbbNmtf9VtH71xkqx8f1M575M+h7w/WPiHDML+de9Sac/817hwduOd5+wMh+9BKSSGCuwAAAABJRU5ErkJggg==" InformativeScreenshot="745d5be60e5321ffa63e06b02c57ac5d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='פורטל שעות עבודה' /&gt;" SearchSteps="Selector">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="584, 236, 244, 17" ElementType="Text" FriendlyName="'עד שעה'" FullSelectorArgument="&lt;webctrl aaname='עד שעה' parentid='divNewReport' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='עד שעה' parentid='divNewReport' tag='DIV' type='' check:text='עד שעה' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPgAAAAVCAYAAABrCyNXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALWSURBVHhe7djBa9NQAMfx/XHZJYiBsl5KDzrYDo0TPM2jE2XCOsHtsB3GBlbY2l087CDuMChWmN1hB+1AU2UoLdpq2/QP+PleXtK+tq+jTKaS/R58oC/vJTl90zZT3W4XRBRPDJwoxhg4UYwxcKIYY+BEMcbAiWKMgRPF2KUC932f6JrzkM9YsCzJRjJ9D8svT1HvraWw/V7f6yJfVfPSigV31ws+e7surJWS2lfMwsrk4QXn6OdG99Fk36L7uQA3vYOzqE05zxRQ1VqdKPD+zYjIqHmKjVkHa8dqXl534BbOw/U/CXyQ3B+d2+2eYD3hovAlbHWSwIcvSEST0cNtvlqC9fgoXLuawH2/idcPLCwfhevVvDlw/QJENJnTnXlshN/Ykh5uEFt6G5Vg7eLA7aeXDVzNU1sVNQ8C758fBB5tnJx8IBBdd1UR7TSyxf6x0sq0iK8azk+wlriPg29qb27ujgh8dF9l6zaWDn+qc4qrsBYKOA/ONxsO3D9Zg7N4oP77f8xhfugBMSZw7aLiKdARx4hIp15+ZYv9Y2+yFjJ7npq3xM/nR3bw87lz9gKZxDretfr75nKV4HOj3gz3V5BbsJHZD88f49Oe27uH3xZ9/jjEkv0ERy3xsHjuwnlW1joeCXx80IP7iK47DwUR+KoIPDpWEuG6Ij7/rAA3mUQqacNOOHASLjaP671958VNLM46Yi2FVFpxErfwcC96Cz+eJwKX95BNfth3MZNMYeaGjZvyPnc3Ua7LL+b+/jDw0bD1TbpOp0NEk2jUUKs1zGuhxlex57t5zcTUZLNeR62ptRu8V1OhT10UtukGRPR/GWhWI9ueGg7bdAGp3W6H5Gci+jdUh6ZGpeHQe//BTZuNQcvjQkusEdHfEXU30qNYM7UbdR0Eri8MRC3mppvpfrVaRHRFTM3pBqMfjD0IPJpwcHDEZ0RdB4HL8jk4OOIz1Ld5B78BFU2eJELpTz4AAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NClick ClickType="Single" DisplayName="Click 'בחר'" sap:VirtualizedContainerService.HintSize="886,167" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://fin-iis.hms.co.il/HalperinTimeReportPortal/#" DesignTimeRectangle="1132, 333, 517, 34" ElementType="Button" FriendlyName="'בחר'" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='button' aaname='                                         בחר                                                                              ' check:text='בחר' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAgkAAAAmCAYAAABOBwgyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMOSURBVHhe7d0/axNhHMDxvKdMDgXBqYNb34AvwKwOTk6iS/EFZOrUrW6CuHUQHKSDoNBJ6KBekzRbofD4/O7uaa5pKkmjkNbPB356f/oHp+fL3cXrTafTFHN2dnZtJpNJnvi7M3E8zzifM8YYY8zmT1m7r63p+dyi9b+0QR0J3RNXwiDvL/pl3RmNx8YYY4zZwFm0bnfnajhcDYY6EsoOAEAobVBHQtQDAEAoVxV65fYCAEAotx9yJOQNtxsAgFZ5VqFXHk4EAAjlocZeecIRACCUNqgjIT4mAQAQyscne/XG2JUEAKARXRB90BvnP0YjVxIAgEZ0QfRBjoRcCyIBAGg1kRC3G/KGZxIAgCK6IPqgjoTT0ag9DAD876ILmkjItSASAICijoR4JkEkAMAG+Lyb+v3+5TzYHqS9L+ftySodPJ2dK+eHn6r2fEpHbzrnHz1Jr96dtGdWdxkJsVGdnraHVxDvmr5ot//kokrV7N8AACxh+nE3Pd7aTUf1WttEwuDtbEGdfttLg/6TtP+9PdD1/SANtnbS8Fu7v6LoguiDW0bC1zTc7qed14ep+lMoXJykDy92Un97mL8DAFjaj7zQ9wfp4EfsXI+Ecuz5+2m733WeDl/Of/3y5iJh9dsN58f7uVJyKLz4kE4WhUIJhK1B2j8ul0sAgKUsGQk3hUDcfrh9JIzWi4RwYygIBABYz12PhHAtFAQCAKzvPkRCmIXCXho+eygQAGBd9yUSQgkFgQAAf8FKkXCUdjsfj+zObULhr0dCOD8+TIcCAQDutH8SCQDA3ScSAICFRAIAsJBIAAAWmouEW7y7AQC4l9Z8dwMAcF9dRoJXRQMAXdEF9auiRQIA0DWLhJFIAABm6kjIfVBHQtQCAECILqgjYTye1BsAACG6IPogR0JTCwAAoYmE9sHFcjUh7kHExH+i8Ks6rT8CMZvmWHd+/qrSz8oYY4wxGzl5nZ5fu2M9767v5VhpgHIVoX5wcTxpNuLgfCgsjoXmh3V/oTHGGGM2d+bDIGZ2/Gog1BMXECaT9BtBWcmk7h1YiAAAAABJRU5ErkJggg==" InformativeScreenshot="e2b53ba5e2c66c2015bad70020fe6079.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='פורטל שעות עבודה' /&gt;" SearchSteps="Selector">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="1614, 339, 23, 21" ElementType="Text" FriendlyName="'בחר'" FullSelectorArgument="&lt;webctrl id='DropProject' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='DropProject' tag='SPAN' type='' aaname='בחר' check:text='בחר' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABsAAAAZCAYAAADAHFVeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC+SURBVEhLY/hPRzBqGVXAqGVUASPBsvP9/42NjeHY0jPv/+KrP6GSb/5vyEXIweTnnn4Dlf///+JEJHnnxP+dO55CZRAAp88+nej/72vb///iHxAPYlneRoThn24u/p9nnPh/5SOoADJ4tOF/nm3I/7k3oXwowB2ML4EajPP+b3gJ4mBaBhOr3v0JykcGP/8faUdXTwXL0A2EAVCwjlo2mC27+L8fKVsgY2Q9uC2jARi1jCpg1DKqADpa9v8/AOsPC+dcmKlQAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[CurrentRow(8).ToString]" sap:VirtualizedContainerService.HintSize="886,419" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+                      <uix:NClick x:Key="חופשה" ClickType="Single" sap:VirtualizedContainerService.HintSize="334,167" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://fin-iis.hms.co.il/HalperinTimeReportPortal/#" DesignTimeRectangle="1240, 401, 408, 26" ElementType="Text" FriendlyName="'009910 -'" FullSelectorArgument="&lt;webctrl id='0' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='0' tag='A' type='' aaname='009910 - תת זמן משרדי - חופשה - ללא חיוב' check:text='009910 - תת זמן משרדי - חופשה - ללא חיוב' /&gt;" ImageBase64="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" InformativeScreenshot="b4eea8ce525092e6a736ca6fdcf6a341.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='פורטל שעות עבודה' /&gt;" SearchSteps="Selector" />
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                      <uix:NClick x:Key="מחלה" ClickType="Single" sap:VirtualizedContainerService.HintSize="334,167" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://fin-iis.hms.co.il/HalperinTimeReportPortal/#" DesignTimeRectangle="1240, 427, 408, 26" ElementType="Text" FriendlyName="'009930 -'" FullSelectorArgument="&lt;webctrl id='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='1' tag='A' type='' aaname='009930 - תת זמן משרדי - מחלה - ללא חיוב' check:text='009930 - תת זמן משרדי - מחלה - ללא חיוב' /&gt;" ImageBase64="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" InformativeScreenshot="ada3ec02673822dc1c54aaec685ebdda.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='פורטל שעות עבודה' /&gt;" SearchSteps="Selector" />
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                      <uix:NClick x:Key="נוכחות" ClickType="Single" sap:VirtualizedContainerService.HintSize="334,167" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://fin-iis.hms.co.il/HalperinTimeReportPortal/#" DesignTimeRectangle="1240, 453, 408, 26" ElementType="Text" FriendlyName="'15315 -'" FullSelectorArgument="&lt;webctrl id='2' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='2' tag='A' type='' aaname='15315 - הפניקס הישראלי חברה לביטוח - רובוטיקה שעתי - בחיוב' check:text='15315 - הפניקס הישראלי חברה לביטוח - רובוטיקה שעתי - בחיוב' /&gt;" ImageBase64="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" InformativeScreenshot="efad0ca2d613b9a2baf0909768b5036b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='פורטל שעות עבודה' /&gt;" SearchSteps="Selector" />
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                      <uix:NClick x:Key="עבודה מהבית" ClickType="Single" sap:VirtualizedContainerService.HintSize="334,167" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://fin-iis.hms.co.il/HalperinTimeReportPortal/#" DesignTimeRectangle="1240, 453, 408, 26" ElementType="Text" FriendlyName="'15315 -'" FullSelectorArgument="&lt;webctrl id='2' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='2' tag='A' type='' aaname='15315 - הפניקס הישראלי חברה לביטוח - רובוטיקה שעתי - בחיוב' check:text='15315 - הפניקס הישראלי חברה לביטוח - רובוטיקה שעתי - בחיוב' /&gt;" ImageBase64="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" InformativeScreenshot="efad0ca2d613b9a2baf0909768b5036b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='פורטל שעות עבודה' /&gt;" SearchSteps="Selector" />
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                    </Switch>
+                    <uix:NClick ClickType="Single" DisplayName="Click 'בחר'" sap:VirtualizedContainerService.HintSize="886,167" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://fin-iis.hms.co.il/HalperinTimeReportPortal/#" DesignTimeRectangle="584, 333, 517, 34" ElementType="Button" FriendlyName="'בחר'" FullSelectorArgument="&lt;webctrl parentid='spanDropPlace' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='spanDropPlace' tag='BUTTON' type='button' aaname='                                         בחר                                                                              ' check:text='בחר' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAgkAAAAmCAYAAABOBwgyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAL6SURBVHhe7d0xaxt3HMfhe0+aNAgyFTp481QIJC8ghsx+BQ4Uk6Gjh5Apm7MVQjJlcofiQqCF0j3JWScLOhgMv9z/7v7SSb4WWcpgm+eBr23dmTjbfZBOdjGfzyPt8vLyxmazWb30ubd0vF5VnzMzM7P7sXz9vnFdr88NNUBqgyYS+gdXwqB+PPSD+ptWlZmZmd3RDV27+1sNh9VgKPIXAADZIhJSOQAAZKkNivzyAgBAltqgjoT23gMAgCy1QZFvTgQAyFIbFPnuRgCAbBEJ6S0SAABZaoOieQ9l5ZkEAGAptUFRpV+2MPVMAgCwlNqgjoSZSAAAVjSRkD64JwEA6GvvSagj4WI67Q4BAETTBs2NiyIBAOgTCQBwh5y/HMVolDeOH56/jj//7U7GeRwvzrV79OQoTv++6s6XcfpseW7840G8/mPenbu9JhLSh/Liojt0G1cx3/BWhqvPZf3dAMDGrudx9vNejF+edwfaSDj+vXtYKz8cxd7kKM4GLrLz345jf3IY77e87TC1wdaRUL47jPHkIN4sCmbY1aeTeDoZx+G7sjsCAGyifHsQo2en0V5Bb0ZCe2wvTv7qHq74J948Xv/+zfUiYYuXG67L+PhiP0aTp3HyaTgU2kAYxf6Lj1FedwcBgI1sFgn/FQLtyw/bR8Li5YYt70n4n1AQCACwm/sdCclAKAgEANjd/Y+EpBcKv7w6jp8EAgDs7GFEQpJDof7PCgQA2N2tIuHzaRzUX+e3QPa3TSh830hI6lA4+/VMIADAPff9IwEAeBBEAgAwSCQAAINEAgAwqBcJ2/ztBgDgodrpbzcAAA9XEwn+VDQAsC61gUgAAG5oI2EqEgCAVYtISM8mAABkqQ2KqppFCgUAgCy1QR0JlUgAAFY0kZCeTsjPJqTXH9LSL1D4Wl40b39Yrj3W35evZXwpzczM7M6uvlavX7/TNb1/jc/HcgekJkhtUFSzOhC6ZxPWQ2E4Ftp/qP/DzMzM7G5vPQzSlsdXA6FZVcU3D+rN9MVuf/0AAAAASUVORK5CYII=" InformativeScreenshot="0876e21349f27a7c82ab134a728d6d21.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='פורטל שעות עבודה' /&gt;" SearchSteps="Selector">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="1067, 339, 23, 21" ElementType="Text" FriendlyName="'בחר'" FullSelectorArgument="&lt;webctrl id='DropPlace' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='DropPlace' tag='SPAN' type='' aaname='בחר' check:text='בחר' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABsAAAAZCAYAAADAHFVeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADKSURBVEhLY/hPRzBqGVXAqGVUASPAsosTjf8bG8Ow5X+3wsX/b3yFSv6/+L8fLgfBDgmd/zfc+QmVf/N/Qy5CztIz7//iS5+gcgiA3Wd/Pv0/1ev733LiRagAxLL+81AuELzZ1/nf17bz/ymYfUjg0+n+/yG21f/3vocKQAHOYHyzMe+/ce4GoJtBANMyiJjv/7k3oVwUcO//ylh09RRbhmkgBECCddSyQWzZyw3/84Bs5KwBw8h6cFpGCzBqGVXAqGVUAXS07P9/ACLVCiP42E4vAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[CurrentRow(8).ToString]" sap:VirtualizedContainerService.HintSize="886,52" sap2010:WorkflowViewState.IdRef="Switch`1_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NClick x:Key="חופשה" ClickType="Single" sap:VirtualizedContainerService.HintSize="334,167" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://fin-iis.hms.co.il/HalperinTimeReportPortal/#" DesignTimeRectangle="943, 401, 158, 26" ElementType="Text" FriendlyName="'לקוח'" FullSelectorArgument="&lt;webctrl aaname='לקוח' parentid='ulPlace' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='לקוח' parentid='ulPlace' tag='A' type='' check:text='לקוח' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKIAAAAeCAYAAACv+sUVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG3SURBVHhe7dg9a8JQGIbh/qczOTgVumVzctIfYMAhS91Kl7qIQ+kgTp2kSxyKQsmmi0txKNipUMhgCBQCDoLwNOpJiB8Rqkk9xOeCM7wnJtNNPrxyHAfD4RBE57Bsb9kgQ6SzYoikBIZISmCIpASGSEpgiKQEhkhKYIgUw4b19AjrW44pY4gUY4yGEGi8yzFlDJFiMEQ6gtvVIfxwwpW/gd4awV1sHW+O1xsytI1z5FrHF3dchzldXSBRDDEjVqFVTLhyhjfBc0Wg/GLLDfmbMMR9Dt8Fvb4BUer4b4/JY4gZsROib7V3a8GLzkeHaKNTEjD6wdWSxRAzIjbEyN52iHbXQO01en87EOJHG1r+AaO5nBPGEDPi7yG66FUF9G70jLgQ5xjVc9BaEzknjyFmxDEhmv475EaInoWaKKLzJefATw+G0ND+lHMKGGJGnBzi3MagXkCu2tu4xpL9Uk7tIyXAEDPipBCnJvTrAozmALb8uye0mKCtpfeREmCIF2vPo/mMGOLFYoikBBfWfRF3bwyRKMQQSQkMkZTAEEkJDJGUwBBJCTshzmYzLq5/XwyRS4m1DtHBLxHwpAVdmeyXAAAAAElFTkSuQmCC" InformativeScreenshot="e5360b9a7a7a8273086b3dcced3e3910.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='פורטל שעות עבודה' /&gt;" SearchSteps="Selector" />
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                      <uix:NClick x:Key="מחלה" ClickType="Single" sap:VirtualizedContainerService.HintSize="334,167" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://fin-iis.hms.co.il/HalperinTimeReportPortal/#" DesignTimeRectangle="943, 401, 158, 26" ElementType="Text" FriendlyName="'לקוח'" FullSelectorArgument="&lt;webctrl aaname='לקוח' parentid='ulPlace' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='לקוח' parentid='ulPlace' tag='A' type='' check:text='לקוח' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKIAAAAeCAYAAACv+sUVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG3SURBVHhe7dg9a8JQGIbh/qczOTgVumVzctIfYMAhS91Kl7qIQ+kgTp2kSxyKQsmmi0txKNipUMhgCBQCDoLwNOpJiB8Rqkk9xOeCM7wnJtNNPrxyHAfD4RBE57Bsb9kgQ6SzYoikBIZISmCIpASGSEpgiKQEhkhKYIgUw4b19AjrW44pY4gUY4yGEGi8yzFlDJFiMEQ6gtvVIfxwwpW/gd4awV1sHW+O1xsytI1z5FrHF3dchzldXSBRDDEjVqFVTLhyhjfBc0Wg/GLLDfmbMMR9Dt8Fvb4BUer4b4/JY4gZsROib7V3a8GLzkeHaKNTEjD6wdWSxRAzIjbEyN52iHbXQO01en87EOJHG1r+AaO5nBPGEDPi7yG66FUF9G70jLgQ5xjVc9BaEzknjyFmxDEhmv475EaInoWaKKLzJefATw+G0ND+lHMKGGJGnBzi3MagXkCu2tu4xpL9Uk7tIyXAEDPipBCnJvTrAozmALb8uye0mKCtpfeREmCIF2vPo/mMGOLFYoikBBfWfRF3bwyRKMQQSQkMkZTAEEkJDJGUwBBJCTshzmYzLq5/XwyRS4m1DtHBLxHwpAVdmeyXAAAAAElFTkSuQmCC" InformativeScreenshot="e5360b9a7a7a8273086b3dcced3e3910.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='פורטל שעות עבודה' /&gt;" SearchSteps="Selector" />
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                      <uix:NClick x:Key="נוכחות" ClickType="Single" sap:VirtualizedContainerService.HintSize="334,167" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://fin-iis.hms.co.il/HalperinTimeReportPortal/#" DesignTimeRectangle="943, 427, 158, 26" ElementType="Text" FriendlyName="'משרד'" FullSelectorArgument="&lt;webctrl id='DropPlaceOffice' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='DropPlaceOffice' tag='A' type='' aaname='משרד' check:text='משרד' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKIAAAAeCAYAAACv+sUVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHjSURBVHhe7dgxa8JAAIbh/ppsgYKTm52cFJfSwamCQyc3l1I6BJd2kkLpUFyKGaRDcehWcFA7ZRMKKTgECsEhg+D89RJPjU2QalO9wHfwgHc5b3qJeEeTyQSDwQAcHIcYfnt+gwyR46AjEuJsNiPaO4ZISmCIpASGSEpgiKQEhkhKYIikBIZISmCItJH35cIVvGn886QwxDQZt1HRNGgxjL6D9nl4LYPTyy7sZUBDGMG+8FkGhvJsx6xAawzlsy7qhSz04Bwd2UIeGXFe+d6CJ/cnjSGmWd8QoaxiWjO10RJhVkxHrm0R4syF82GhVS2K/d58ze3ByOm4epPzhDHENNsUojBsiDfaMq5tQhTeb6CXWhgt5oJ/nn4b2pMghphm/xii0xHz6jMcOfetn5cshphmfwnRf+PlmrDk3p8hjh6LkegYIsXbOUQPtllDrWPLZx561zpO7iw5n3+3/LR4vlpjiBS1Q4gXIr61q5ipC8usI39cQftzsT7/B157cVf7BIZI8bYKUbwFXx9QO/OvZfwrmSKKJf9aRnyuNtEbh79roZlb/YwH54iIAwyREjP1gkvqfVxU/xZDJCUwRFICQyQlMERSAkMkJTBEUgJDJCUwRFJCJEQOjkMMhsihxJiHOME3I6DS4xHB+pMAAAAASUVORK5CYII=" InformativeScreenshot="21008d87b6820a960077f3da47451cf2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='פורטל שעות עבודה' /&gt;" SearchSteps="Selector" />
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                      <uix:NClick x:Key="עבודה מהבית" ClickType="Single" sap:VirtualizedContainerService.HintSize="334,167" sap2010:WorkflowViewState.IdRef="NClick_15" KeyModifiers="None" MouseButton="Left">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://fin-iis.hms.co.il/HalperinTimeReportPortal/#" DesignTimeRectangle="943, 453, 158, 26" ElementType="Text" FriendlyName="'בית'" FullSelectorArgument="&lt;webctrl aaname='בית' parentid='ulPlace' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='בית' parentid='ulPlace' tag='A' type='' check:text='בית' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKIAAAAeCAYAAACv+sUVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFZSURBVHhe7dgxS8NAGIdxv1OmDK6CQ7dOgh/BgLOTq0voIE6dOrnVyaljQOpQrpMubhmaFIRuBeGvac6YOpSCqXkhzw9ueC/J9sCRO8qyTEmSCGhD0V7RICGiVYQIEwgRJhAiTCBEmECIMIEQYQIhwgRChAmECBMIsROWGl8ECoL6CnVyOZJblW+4wfd+pPGi2Nn+JjyNNJr7lw+AEDtjrelNqOhhWY4fK00HfYXXE1V5LcaKqhC3rZ5j9Y+vNHn3Gw0jxM540bAX6nbux8LrUL0glvPjrhClN92fB4pnfmwYIXaGU/w7sk14+4ZYHtWEiD/aI8R1KvfklK79vIUQ0Yg9QtyJENGEtDx2H/2/ygYh4j+VVzOhzu7c179zza4QN89+rm/q6xAxEiJMIESYQIgwgRBhAiHCBEKECYQIEwgRJlQh5nlOiGhN0V7RICGiVYQIE8oQc30CrAUH66qok2sAAAAASUVORK5CYII=" InformativeScreenshot="cd251b14a4d936a4abd16ffb3b3ab808.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='פורטל שעות עבודה' /&gt;" SearchSteps="Selector" />
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                    </Switch>
+                    <uix:NClick ClickType="Single" DisplayName="Click 'אישור'" sap:VirtualizedContainerService.HintSize="886,167" sap2010:WorkflowViewState.IdRef="NClick_16" KeyModifiers="None" MouseButton="Left">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://fin-iis.hms.co.il/HalperinTimeReportPortal/#" DesignTimeRectangle="1132, 526, 244, 34" ElementType="Text" FriendlyName="'אישור'" FullSelectorArgument="&lt;webctrl aaname='אישור' parentid='divNewReport' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='אישור' parentid='divNewReport' tag='A' type='' check:text='אישור' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPgAAAAmCAYAAADp5VZUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI2SURBVHhe7dm/TttQGIbx3AqX0NvI2JGhS0fGjF2yImVLR5aqYqmEWBBLFalDBWJBnaiysDAEVZUQsYTjOM7X7/jY4KSIgtRKztsH6QeOzzlsT47/dKbTqQHQ1Ln1XwA0+Q6eeOmJdd6MAQiomy67vt/Kw+BOCmCTlYE3LtEJHBBC4IAwAgeErQeeJIkFBA4I8I7rpsuuCRwQQuCAMAIHhBE4IIzAAWEEDggjcEAYgW+i3EZ3tvKT/iys14/jvfEynrxeVPMXduEfL06r9QeF3djS9qr/V86v5u5dx6Xm46ODOP7qKM4fHc7i+uBjYROfdXmWPZxD+xC4gN3cTjz4m3F+f64Z7UsCb47XgXd2ZnHOvLBB+SWSxS+C28Le1mvQTgSuoQyuEenfDTy17udwzq8UfN72cWGpH58cN3Z0tBOBa/ingQ8Xdhk+j/xv4ZHP3VVuW/V8tBeBa3hR4F99rPDL7UfnumFu788W1hs25t/5Pb4fd0+Xcfc+qsbQbgSu4fmBZ/bOxybf6x04s/0fPug7cr32Nx51HXi4Hx9c+fzk4aEeWozANTwn8BB1d7exrj+3gc9Lw+V38wn5upXAXT8+xQ8P9bhMbzkC1/B04L5rfytsUr9aC/fQs+o4Wdr+pz+86loP3G0dxodu5194TdZqBP6f6Wf2+sPctt3Kbg5NBA4II3BAGIEDwggcEEbggDACB4QROCCMwAFhBA4II3BAGIEDwp4MHMDGezRwAHoIHJCV2C9XWovSQHoJ8AAAAABJRU5ErkJggg==" InformativeScreenshot="51978d96e8000c3bb00499b8b7606e32.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='פורטל שעות עבודה' /&gt;" SearchSteps="Selector" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'קיימת חפיפת'" sap:VirtualizedContainerService.HintSize="886,904" sap2010:WorkflowViewState.IdRef="NCheckState_1">
+                      <uix:NCheckState.IfExists>
+                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="416,677" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NClick ClickType="Single" DisplayName="Click 'אישור'" sap:VirtualizedContainerService.HintSize="354,167" sap2010:WorkflowViewState.IdRef="NClick_19" KeyModifiers="None" MouseButton="Left">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://fin-iis.hms.co.il/HalperinTimeReportPortal/#" DesignTimeRectangle="1083, 268, 169, 34" ElementType="Button" FriendlyName="'אישור'" FullSelectorArgument="&lt;webctrl aaname='אישור' parentid='myModal1' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='אישור' parentid='myModal1' tag='BUTTON' type='' check:text='אישור' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAK0AAAAmCAYAAAC22BtYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIKSURBVHhe7de/SitBFIDxfRVfxdLS0sLG0tLSJoWNkE6LW6QRSSOIT5BOFBGCWHgJXAQRiYhgETDJrpPjWXf2n16Dgwo55Bv4YWYnO0L4so6RMBjGBtEyzI0i2mi1B8y0fNSjXR8Cs4loYQ7RwhyihTlEC3OIFuYQLcwhWphDtDCHaGEO0cIcooU5RDtNIp1n/6H4MXx0stGor12d5u9/kavq/NDJk0yk5ffb6E1E7l9q90qxPpbNf7o+yPfPrF3qNTeR9p/y2twj2gDbiZxobE+9xF/L4guP1q+f6ryyHjV0v4F+MW4TWUjnO7qfE+lfxuU9INpQrXv9gIrwfjhafdo2b9Jr6R6xbF3ri5GTrcqTF4pow/xmtIvnOn920jzTn7E+cXW12xmV70eGaMMERXus8TmN0N/7Idr9RNpniaz5eesuP3qMs9+jT9nN/L0oEW2Yr0er/1hppP2//nyq8/aDLup5tbpfVbp3cV7W821Xn7bpPLsfBaIN85Vo01CXtst7okYsTQ14qEeBztHnf+5r0aqFo+x4Me2euUS0YaZHq0/XCyd9vfY20nPpyL8eTKR9MPbv+7/30Ubro+xIETvZrX4J5h3R/pLGWJb3YllRtacuvo9oYQ7RwhyihTlEC3OIFuYQLcwhWphDtDCHaGEO0cIcooU5n0YLzLB8FNEyGFYG0TKMDZFXPbC5zzgdIaoAAAAASUVORK5CYII=" InformativeScreenshot="84b81b68565d8ea7d3099312db56a7b9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='פורטל שעות עבודה' /&gt;" SearchSteps="Selector" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                          <uix:NClick ClickType="Single" DisplayName="Click 'איפוס'" sap:VirtualizedContainerService.HintSize="354,167" sap2010:WorkflowViewState.IdRef="NClick_20" KeyModifiers="None" MouseButton="Left">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://fin-iis.hms.co.il/HalperinTimeReportPortal/#" DesignTimeRectangle="1405, 526, 244, 34" ElementType="Text" FriendlyName="'איפוס'" FullSelectorArgument="&lt;webctrl parentid='divNewReport' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='divNewReport' tag='A' type='' aaname='איפוס' check:text='איפוס' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPgAAAAmCAYAAADp5VZUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALDSURBVHhe7dy/SxthHMdx/6ebbgg4CR0y5RYDQrt1MeDgUjcXsSCHg3QoFjoUWgolTg7iplCiUNIpBclQyFA4EC9kODj49Llf5vRO+mO6e3i/4Au53CVO7zyPOXElDEMxDNOuuauZcD4355JZXrdSdyHDMM2fZdDVsO8DL05eX18zDGPJlALPHiRPAmi/IvC5WeEJHLBM0nISN4EDFiJwwGIPAi8eEDhgBwIHLEbggMUIHLAYgQMWI3DAYgQOWIzA2y6OFN6G6URx/hyQI/CWiq6O1H/mynEcOZ019dfX5Hb62j2ZKkqvCDTcNOfMef9b+oT0a6hBcn3NpNeUzx+Os9fEoUYHXXnmOHvfzOSdJ2dzqBkfKo1G4G1lVu7ZpS+v52u8yJ/7aQLtuNr/WqSYRX4fuDH7/EJuEW+qes34sBR4YjGW33O1cxZmx+kHgafjH9khmovAWysLc/+yvK5K0499OQej/OhxvIFOt5xlqKm/CDwOdLHXNTuFgYaz0Dx25e5dPFjR0UwE3lpmVS221iXBySDdOgfZUSXw5Hj3LFB4X+efA09W/a750Jh8Gchd78vr7Oj8Nj+JRiPw1vqfwCNNPmyrv+Fp+yS7oi7w8Gak0U2xymervn9lHsYzDbfM7/2vix0Cmo7AW2uqTxvVLfrkrdlKP7lFrzPRcdfV0ff8sOLRe9yea6fjmWM26G1A4C2WrtY9X6NisU2/ZPNMrEV8NYEvSrfT4kjTZNvdO9L4yV6r7xFd+ep2zc8tvtxDYxF4m8Whxu9farW4tZXcJjub5ScTj+OMNHrjLa83s/p8X+fll1TU7QIi83u6J/fVqQJukzUagdsg/WOXf9syR8k/92CXbT0CByxG4IDFCBywGIEDFiNwwGIEDliMwAGLEThgMQIHLEbggMUIHLDYk4EzDGPHVAJnGMa+IXCGsXbm+g1QdwSoMxd1ewAAAABJRU5ErkJggg==" InformativeScreenshot="f2f04e9d4ede44aff353cd20ee36a9ce.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='פורטל שעות עבודה' /&gt;" SearchSteps="Selector" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                          <uix:NClick ClickType="Single" DisplayName="Click 'אישור'" sap:VirtualizedContainerService.HintSize="354,167" sap2010:WorkflowViewState.IdRef="NClick_21" KeyModifiers="None" MouseButton="Left">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://fin-iis.hms.co.il/HalperinTimeReportPortal/#" DesignTimeRectangle="1083, 268, 169, 34" ElementType="Button" FriendlyName="'אישור'" FullSelectorArgument="&lt;webctrl aaname='אישור' parentid='myModal1' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='אישור' parentid='myModal1' tag='BUTTON' type='' check:text='אישור' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAK0AAAAmCAYAAAC22BtYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIKSURBVHhe7de/SitBFIDxfRVfxdLS0sLG0tLSJoWNkE6LW6QRSSOIT5BOFBGCWHgJXAQRiYhgETDJrpPjWXf2n16Dgwo55Bv4YWYnO0L4so6RMBjGBtEyzI0i2mi1B8y0fNSjXR8Cs4loYQ7RwhyihTlEC3OIFuYQLcwhWphDtDCHaGEO0cIcooU5RDtNIp1n/6H4MXx0stGor12d5u9/kavq/NDJk0yk5ffb6E1E7l9q90qxPpbNf7o+yPfPrF3qNTeR9p/y2twj2gDbiZxobE+9xF/L4guP1q+f6ryyHjV0v4F+MW4TWUjnO7qfE+lfxuU9INpQrXv9gIrwfjhafdo2b9Jr6R6xbF3ri5GTrcqTF4pow/xmtIvnOn920jzTn7E+cXW12xmV70eGaMMERXus8TmN0N/7Idr9RNpniaz5eesuP3qMs9+jT9nN/L0oEW2Yr0er/1hppP2//nyq8/aDLup5tbpfVbp3cV7W821Xn7bpPLsfBaIN85Vo01CXtst7okYsTQ14qEeBztHnf+5r0aqFo+x4Me2euUS0YaZHq0/XCyd9vfY20nPpyL8eTKR9MPbv+7/30Ubro+xIETvZrX4J5h3R/pLGWJb3YllRtacuvo9oYQ7RwhyihTlEC3OIFuYQLcwhWphDtDCHaGEO0cIcooU5n0YLzLB8FNEyGFYG0TKMDZFXPbC5zzgdIaoAAAAASUVORK5CYII=" InformativeScreenshot="1811f278a94f1cbdeef1b24520a1e1c3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='פורטל שעות עבודה' /&gt;" SearchSteps="Selector" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                        </Sequence>
+                      </uix:NCheckState.IfExists>
+                      <uix:NCheckState.IfNotExists>
+                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="416,476" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NClick ClickType="Single" DisplayName="Click 'שלח דיווחים'" sap:VirtualizedContainerService.HintSize="354,167" sap2010:WorkflowViewState.IdRef="NClick_17" KeyModifiers="None" MouseButton="Left">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://fin-iis.hms.co.il/HalperinTimeReportPortal/#" DesignTimeRectangle="36, 1000, 130, 34" ElementType="Text" FriendlyName="'שלח דיווחים'" FullSelectorArgument="&lt;webctrl name='aSendToServer' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl name='aSendToServer' tag='A' type='' aaname='שלח דיווחים' check:text='שלח דיווחים' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIYAAAAmCAYAAAABZeN/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJhSURBVHhe7Zg9a9tAGMf9VfwR+hX6MTJ0yejRY5euhS7FGToYigkeTSm0UxFkcvASSiAGL4USTEIWDYJYtl6enl5Od5L+DmqJVQX/D37ge+7t8d0vJ8U9z/OEkCoUg0AKMXpvVoTsEWOwIccMxSAQikEgFINAKAaBUAwCoRgEQjEIhGIQCMU4IJNQ5utIxhPQ1nUoxgGZReJKLM4MtHUdinFAKMZzEIjzKLjch2mf8X1eLzYbjIliWS520q/MubzM1hmu4iyQzmmPj2VcWqNSHiMZpnPahLLMm4viq9x+bLP2VAxUsrV6l0ku+WdFmlv+XXVuOu/W6ZoY7iooxdODKjZLUforrI7x5cTJDmP+Le8PNrh8AIrKARlwToZMDDP3VgY/s7mmI7ufxpezW9X8EMrrpE4xmvAcYpjY3fWuVG9HDBO7cuxYziiUX0nbhZ/VKUYT8CH8qxgmVt/gNsRAB3p6o9bxI3mrYxSjCfgQamKMAjlbhDJMr2o0phqrb3BNjPNApotATnW9AOdk+BsxApn76ia70TeZoiLGeK2qt/vzbpUXJ0YJNKYaq29wTYy94JwMzcXoX0SpBN/t3zRsMT6otVx1E37JHzP6sYMeSW1AMZ4C52RoKsZWpg8qqF86NbkYztetvLLi/c9q3eQN2lP/Cb2z+rdJ18SA5aWLcR7JnYoVL52aT4HMfsfiJpeJKhv1qNnsss/uOpTBe6tv23RHjOOm/3EnJ5OE8u3x36AYBEIxCIRiEAjFIBCKQSAUg0AoBoFQDAKhGARCMQiEYhDIXjHI0VMTgxAbikEAnvwBvahZF5IUzNkAAAAASUVORK5CYII=" InformativeScreenshot="40f0955663967d302d6dc708f690152d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='פורטל שעות עבודה' /&gt;" SearchSteps="Selector" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                          <uix:NClick ClickType="Single" DisplayName="Click 'אישור'" sap:VirtualizedContainerService.HintSize="354,167" sap2010:WorkflowViewState.IdRef="NClick_18" KeyModifiers="None" MouseButton="Left">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://fin-iis.hms.co.il/HalperinTimeReportPortal/#" DesignTimeRectangle="1083, 268, 169, 34" ElementType="Button" FriendlyName="'אישור'" FullSelectorArgument="&lt;webctrl aaname='אישור' parentid='myModal1' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='אישור' parentid='myModal1' tag='BUTTON' type='' check:text='אישור' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAK0AAAAmCAYAAAC22BtYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIKSURBVHhe7de/SitBFIDxfRVfxdLS0sLG0tLSJoWNkE6LW6QRSSOIT5BOFBGCWHgJXAQRiYhgETDJrpPjWXf2n16Dgwo55Bv4YWYnO0L4so6RMBjGBtEyzI0i2mi1B8y0fNSjXR8Cs4loYQ7RwhyihTlEC3OIFuYQLcwhWphDtDCHaGEO0cIcooU5RDtNIp1n/6H4MXx0stGor12d5u9/kavq/NDJk0yk5ffb6E1E7l9q90qxPpbNf7o+yPfPrF3qNTeR9p/y2twj2gDbiZxobE+9xF/L4guP1q+f6ryyHjV0v4F+MW4TWUjnO7qfE+lfxuU9INpQrXv9gIrwfjhafdo2b9Jr6R6xbF3ri5GTrcqTF4pow/xmtIvnOn920jzTn7E+cXW12xmV70eGaMMERXus8TmN0N/7Idr9RNpniaz5eesuP3qMs9+jT9nN/L0oEW2Yr0er/1hppP2//nyq8/aDLup5tbpfVbp3cV7W821Xn7bpPLsfBaIN85Vo01CXtst7okYsTQ14qEeBztHnf+5r0aqFo+x4Me2euUS0YaZHq0/XCyd9vfY20nPpyL8eTKR9MPbv+7/30Ubro+xIETvZrX4J5h3R/pLGWJb3YllRtacuvo9oYQ7RwhyihTlEC3OIFuYQLcwhWphDtDCHaGEO0cIcooU5n0YLzLB8FNEyGFYG0TKMDZFXPbC5zzgdIaoAAAAASUVORK5CYII=" InformativeScreenshot="a42f602d8317fdc0dd5ce1567d554290.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='פורטל שעות עבודה' /&gt;" SearchSteps="Selector" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                        </Sequence>
+                      </uix:NCheckState.IfNotExists>
+                      <uix:NCheckState.Target>
+                        <uix:TargetAnchorable BrowserURL="https://fin-iis.hms.co.il/HalperinTimeReportPortal/#" DesignTimeRectangle="684, 238, 568, 20" ElementType="Text" FriendlyName="'קיימת חפיפת'" FullSelectorArgument="&lt;webctrl tag='P' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='P' type='' aaname='קיימת חפיפת זמנים עם אחת השורות שכבר דווחו' check:text='קיימת חפיפת זמנים עם אחת השורות שכבר דווחו' /&gt;" ImageBase64="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" InformativeScreenshot="1ac0e296bdb3ce51900fb2eb26a6ea68.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='פורטל שעות עבודה' /&gt;" SearchSteps="Selector" />
+                      </uix:NCheckState.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NCheckState>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+            </ui:ForEachRow>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-1928, -8, 1936, 1056" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKsSURBVFhH7ZbZjtowFIZ5pL5gq2HfAmHf9+2FuOlcTMUNKgikSEhlhzP+kzhkgidwRr1rLf1KcoG/z8Y+duB/U7XxeEzIaDSi4XBIg8GA+v0B9fp96vV61O12qdPpULvdoVa7Tc1WixrNJjUaTarXG9TudIxSqfTN7o7fAL9cLnc5u3P25kzX65UmkwnNZjNIfV0CIwfwdDrRETnKHOkgc7Cee/G0cjAlILDZbOjt7RfVGw1D/4oEpl0l4MDx7iNgGAat12v6+fpK1Vrd0HWdJ4H/HAImXCUAuAO+F1itVrRcLmk+n9N0OqVKpWrYXT/XsOAcARt+N/0usFdA07QPyRUKZHf9XMNqNwUcuM/0728CeF+Ikf9eyCzEbKwpl88zBcRWkwI3sAtuAt2BhCWwc2e3F+voTHqOKYB9jq32EC4gjgDe3fD93hHI6jmeAIqMJYAZuIHNCJnbqOXTC7cEtrZAJqvzBFDhUFzUYHxLuC0ggKrRSwEtm+UJoLyaM+ABmwHM+VbBLQHApUA6k+EJoLZjBu7AiAT7wOXoHQGNKYCDBXvagbhFGHApkEprTAFxqn2cARvqCxfxwC2BEyVTaZ4AjlRnBjxQJVgxchlU00QqxROo1euWgOjcH4x8Dt9ud6ZAPMkUqNZqdBICaqA7/vA/tkAskeQJVKrVBwIW+BHcEYgneALlildAwGQE4FMw4oJLgWgszhQoV8ztI2EPoXbcYLdAJBbjCZTKZVNABVFGAZaBQDjKFCiWSs8JKIDeQCAUifIECkU/gd1TYBkIBMMRnkC+UDQrmIRxgN6YAqEwTwB3OPxQ1SE36OeFLSDucPjh38qPYIgngDscrlG4yeAygfMcRypONRwsqO0or6hwKDLY59hqWO1YcPjPMe0YOeDfX4I8gX+oBQLvEwJiQgPuVJwAAAAASUVORK5CYII=" InformativeScreenshot="a39300680531c2c5d49fa40a9e983352.png" Selector="&lt;html app='chrome.exe' title='פורטל שעות עבודה'/&gt;" Url="https://fin-iis.hms.co.il/HalperinTimeReportPortal/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
